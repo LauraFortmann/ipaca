@@ -1,0 +1,25 @@
+// Lesson tt-001
+// a test lesson, no meaningful content.
+{
+  name: "Picture Description", 
+  id: "lesson-tt-0020",       
+  author: "Laura Fortmann",  
+  version: 1,                 
+  text: "Picture Description is important for vocabulary learning.",
+  text_source: "Laura Fortmann",
+  text_licence: "CC0",
+  text_url: "http://uos.de",
+  tasks: [  // the list of tasks for this lesson
+    { 
+      name:  "What is a lession?",
+      type: "V",         
+      interaction: "PICDES", 
+      primary: true,     
+      show_lesson_text: false,  
+      question:  "Describe the image below.", 
+      url: "OIP.jpg",
+      answer: "You should have mentioned: child, dentist, assistant, teeth, instrument"
+    }  
+
+  ],  // end of list of tasks
+} // end of lesson

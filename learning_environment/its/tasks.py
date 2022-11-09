@@ -16,6 +16,7 @@ import learning_environment.its.tasktypes.gap as gap
 import learning_environment.its.tasktypes.mark as mark
 import learning_environment.its.tasktypes.short as short
 import learning_environment.its.tasktypes.sortpar as sortpar
+import learning_environment.its.tasktypes.picdes as picdes
 
 # short names of active task types and their classes
 _TASK_TYPES = {'SC': sc.SCTask,
@@ -23,7 +24,8 @@ _TASK_TYPES = {'SC': sc.SCTask,
               'GAP': gap.GapTask,
               'MARK': mark.MarkTask,
               'SHORT': short.ShortTask,
-              'SORTPAR': sortpar.SortParTask}
+              'SORTPAR': sortpar.SortParTask,
+              'PICDES': picdes.PictureDescription}
 
 class TaskTypeFactory:
     """Picks the proper class or creates or proper object for a given interaction type or database Task object."""
