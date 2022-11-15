@@ -12,5 +12,13 @@
         </div>
     </form>
 {% else %}
-    <p>The correct answer is: {{ task.content.0 }}.</p>
+    {% if solved %}
+        <p>You solved it! </p>
+    {% else %}
+        <p>You failed. You only mentioned {{mentioned}}/5 nouns.</p>
+    {% endif %}
+
+    {% for l in labels%}
+        {{l}}
+    {% endfor %}
 {% endif %}

@@ -12,7 +12,7 @@ def create_image_label(apps, schema_editor):
     # filter the pp questionnaire
     image_label = Image_Label.objects.create(
         name = "dentists",
-        url = "images/OIP.jpg",
+        url = "OIP.jpg",
         label = "child, dentist, assistant, teeth, instrument"
     )
 
