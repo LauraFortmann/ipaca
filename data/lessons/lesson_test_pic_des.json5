@@ -18,7 +18,7 @@
       show_lesson_text: false,  
       question:  "Describe the image below.", 
       url: "OIP.jpg",
-      answer: "You should have mentioned: child, dentist, assistant, teeth, instrument"
+      answer: "child, dentist, assistant, teeth, instrument"
     }  
 
   ],  // end of list of tasks
