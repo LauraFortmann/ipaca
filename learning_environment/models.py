@@ -227,9 +227,3 @@ class LearnerStatus(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     current_lesson = models.ForeignKey(Lesson, null=True, on_delete=models.SET_NULL)
 
-
-
-class Image_Label(models.Model):
-    name = models.CharField(max_length=250)
-    url = models.CharField(max_length=250)
-    label = models.CharField(max_length=250)

@@ -5,5 +5,7 @@ crispy-bootstrap5
 django-crispy-forms
 json5
 spacy
+nltk
+textblob
 
 

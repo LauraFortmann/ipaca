@@ -17,8 +17,29 @@
     {% else %}
         <p>You failed. You only mentioned {{mentioned}}/5 nouns.</p>
     {% endif %}
+    <p>labels:</p>
 
-    {% for l in labels%}
-        {{l}}
+    <p>You mentioned:</p>
+    {% for noun in mentioned_nouns %}
+    
+        {{noun}}
+    {% endfor %}
+
+    <p>You did not mentioned:</p>
+    {% for noun_not in not_mentioned_nouns %}
+    
+        {{noun_not}}
+    {% endfor %}
+
+    <p>Speeling mistakes:</p>
+    {% for noun_false in false_words %}
+    
+        {{noun_false}}
+    {% endfor %}
+
+    <p>We corrected them into: </p>
+    {% for noun_corrected in corrected_words %}
+    
+        {{noun_corrected}}
     {% endfor %}
 {% endif %}
