@@ -17,29 +17,45 @@
     {% else %}
         <p>You failed. You only mentioned {{mentioned}}/5 nouns.</p>
     {% endif %}
-    <p>labels:</p>
-
-    <p>You mentioned:</p>
+    <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}"></img><p>
+    <p><b>Your answer was:</b></p>
+    <p> {{answer}}</p>
+    <p>
+    <p><b>You mentioned the following items of the image:</b></p>
     {% for noun in mentioned_nouns %}
-    
-        {{noun}}
+        <p>{{noun}}</p>
     {% endfor %}
 
-    <p>You did not mentioned:</p>
+    </br> </br>
+    <p><b>You did not mentioned:</b></p>
     {% for noun_not in not_mentioned_nouns %}
     
-        {{noun_not}}
+        <p>{{noun_not}}</p>
     {% endfor %}
 
-    <p>Speeling mistakes:</p>
-    {% for noun_false in false_words %}
-    
-        {{noun_false}}
+    {% if spelling_wrong %}
+        <p><b>You had {{error_spelling}} spelling mistakes:</b></p>
+        {% for noun_false in false_words %}
+        
+        <p> {{noun_false}}</p>
+        {% endfor %}
+
+        <p><b>We corrected them into: </b></p>
+        {% for noun_corrected in corrected_words %}
+        
+        <p> {{noun_corrected}} </p>
+        {% endfor %}
+    {% endif %}
+
+</br>
+    {% if error_tense != 0 %}
+    <p><b>You had {{error_tense}} tense mistake/s. Verbs must be in present tense. The wrong verbs were</b></p>
+    {% for w in wrong_tense %}
+    {{w}}
     {% endfor %}
 
-    <p>We corrected them into: </p>
-    {% for noun_corrected in corrected_words %}
-    
-        {{noun_corrected}}
-    {% endfor %}
+    {% endif %}
+  
+  
+
 {% endif %}

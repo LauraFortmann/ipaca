@@ -32,9 +32,25 @@ class PictureDescription():
         self.task = task
 
     def analyze_solution(self, solution):
+        penalties = 0
+        error_tense=0
+        error_spelling = 0
+        wrong_tense = []
+        #extract verb tense
+        words = nltk.word_tokenize(solution.get('answer', None))
+        words1 = nltk.pos_tag(words)
+        pos=[]
+        for w in words1:
+            pos.append(w[1])
+        print(pos)
+        for w in words1:
+            if w[1] == 'VBD' or w[1] =='VBN':
+                penalties += -0.5
+                error_tense += 1
+                wrong_tense.append(w[0])
 
         #penalities for spelling mistakes
-        penalties = 0
+        
         #for each spelling mistake -0.5
         given_answer = solution.get('answer', None)
         given_answer_single = given_answer.split(" ")
@@ -51,6 +67,7 @@ class PictureDescription():
             result = word.spellcheck()
             if result[0][0] !=answe:
                 false_words.append(answe)
+                error_spelling +=1
                 corrected_words.append(result[0][0])
                 penalties -= 0.5
                 # if noun is not too far away from real word we correct it 
@@ -132,5 +149,10 @@ class PictureDescription():
         context['labels']=labels
         context['false_words']= false_words
         context['corrected_words']= corrected_words
+        context['error_tense']= error_tense
+        context['error_spelling']= error_spelling
+        context['spelling_wrong'] = error_spelling >0
+        context['wrong_tense'] = wrong_tense
+        context['answer'] = given_answer
         return (analysis, context)
 
