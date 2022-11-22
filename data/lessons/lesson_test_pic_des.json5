@@ -16,7 +16,7 @@
       interaction: "PICDES", 
       primary: true,     
       show_lesson_text: false,  
-      question:  "Describe the image below.", 
+      question:  "Describe the image below by mentioning all five colored items.", 
       url: "OIP.jpg",
       answer: "child, dentist, assistant, teeth, instrument"
     }  

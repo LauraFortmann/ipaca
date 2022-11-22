@@ -6,7 +6,7 @@
         {% csrf_token %}
         <input type="hidden" name="task" value="{{ task.id }}">
         <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}"></img><p>
-        <p><input type="text" size="30" name="answer"></p>
+        <p><textarea rows="9" cols="70" name="answer" placeholder="Please enter your description here!"></textarea></p>
         <div style="margin-top: 2em">
             <button type="submit" class="btn btn-secondary">Check!</button>
         </div>
@@ -15,46 +15,72 @@
     {% if solved %}
         <p>You solved it! </p>
     {% else %}
-        <p>You failed. You only mentioned {{mentioned}}/5 nouns.</p>
+        <p>You failed. You only mentioned <b>{{mentioned}}/5</b> nouns.</p>
     {% endif %}
     <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}"></img><p>
     <p><b>Your answer was:</b></p>
-    <p> {{answer}}</p>
+    <p style="padding: 10px; border: 2px solid black;"> {{answer}}</p>
     <p>
-    <p><b>You mentioned the following items of the image:</b></p>
-    {% for noun in mentioned_nouns %}
-        <p>{{noun}}</p>
-    {% endfor %}
+        <div class="list" >
+            <span><b>You mentioned the following item/s of the image:</b></span>
+            <ul>
+                {% for noun in mentioned_nouns %}
+                    <li>{{noun}}</li>
+                {% endfor %}
+            </ul>
+        </div>
 
-    </br> </br>
-    <p><b>You did not mentioned:</b></p>
-    {% for noun_not in not_mentioned_nouns %}
     
-        <p>{{noun_not}}</p>
-    {% endfor %}
+    <div class="list" >
+        <span><b>You did not mentioned:</b></span>
+        <ul>
+            {% for noun_not in not_mentioned_nouns %}
+    
+                <li>{{noun_not}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+            
 
     {% if spelling_wrong %}
-        <p><b>You had {{error_spelling}} spelling mistakes:</b></p>
-        {% for noun_false in false_words %}
+    <div class="list" >
+        <span><b>You had {{error_spelling}} spelling mistake/s:</b></span>
+        <ul>
+            {% for noun_false in false_words %}
         
-        <p> {{noun_false}}</p>
-        {% endfor %}
+                <li> {{noun_false}}</li>
+            {% endfor %}
+        </ul>
+    </div>
 
-        <p><b>We corrected them into: </b></p>
-        {% for noun_corrected in corrected_words %}
+    
+    <div class="list" >
+        <span><b>We corrected it/them into: </b></span>
+        <ul>
+            {% for noun_corrected in corrected_words %}
         
-        <p> {{noun_corrected}} </p>
-        {% endfor %}
+               <li>{{noun_corrected}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+        
     {% endif %}
 
-</br>
+
     {% if error_tense != 0 %}
-    <p><b>You had {{error_tense}} tense mistake/s. Verbs must be in present tense. The wrong verbs were</b></p>
-    {% for w in wrong_tense %}
-    {{w}}
-    {% endfor %}
+    <div class="list" >
+        <span><b>You had {{error_tense}} tense mistake/s. Verbs must be in present tense. The wrong verbs were</b></span>
+        <ul>
+            {% for w in wrong_tense %}
+                <li>{{w}}</li>
+            {% endfor %}
 
+   
+        </ul>
+    </div>
     {% endif %}
+   
   
   
 

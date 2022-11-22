@@ -42,7 +42,7 @@ class PictureDescription():
         pos=[]
         for w in words1:
             pos.append(w[1])
-        print(pos)
+  
         for w in words1:
             if w[1] == 'VBD' or w[1] =='VBN':
                 penalties += -0.5
@@ -61,7 +61,7 @@ class PictureDescription():
         corrected =[]
         false_words=[]
         corrected_words=[]
-        print("before",given_answer_without_punctuation)
+   
         for answe in given_answer_without_punctuation:
             word = Word(answe)
             result = word.spellcheck()
@@ -74,9 +74,8 @@ class PictureDescription():
                 if result[0][1] >=0.95:
                     corrected.append(result[0][0])
             else: corrected.append(answe)
-            print(answe, result[0][0])
-        print(penalties)
-        print("after:", corrected)
+       
+
         
 
         nltk.download("wordnet")
@@ -86,7 +85,7 @@ class PictureDescription():
         labels_remove_white=[]
         for label in labels:
             labels_remove_white.append(label.replace(" ", ""))
-        print("labels", labels_remove_white)
+ 
 
 
         synonyms = {}
@@ -99,21 +98,21 @@ class PictureDescription():
             synonyms[sing_label]=synonyms_single 
       
         given_answer = ' '.join(str(e) for e in corrected)
-        print("given",given_answer)
+     
         nlp = spacy.load("en_core_web_sm")
         answer_parsed = nlp(given_answer)
-        print(answer_parsed)
+ 
         
         answer_only_nouns = []
         for noun in answer_parsed.noun_chunks:
            # answer_only_nouns.append(noun.split(" ")[-1])
             answer_only_nouns.append(noun)
         
-        print(answer_only_nouns)
+       
         extracted_nouns = []
         for noun_phrases in answer_only_nouns:
             extracted_nouns.append(str(noun_phrases).split(" ")[-1])
-        print(extracted_nouns)
+       
 
         mentioned_nouns = []
         not_mentioned_nouns = []
@@ -137,7 +136,7 @@ class PictureDescription():
         analysis = {}
 
         
-        if len(mentioned_nouns)>=4:
+        if len(mentioned_nouns)>=4 and penalties < 1:
             analysis['solved'] = True
         else:
             analysis['solved'] = False
@@ -153,6 +152,6 @@ class PictureDescription():
         context['error_spelling']= error_spelling
         context['spelling_wrong'] = error_spelling >0
         context['wrong_tense'] = wrong_tense
-        context['answer'] = given_answer
+        context['answer'] = solution.get('answer', None)
         return (analysis, context)
 
