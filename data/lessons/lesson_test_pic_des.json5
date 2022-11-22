@@ -1,7 +1,7 @@
 // Lesson tt-001
 // a test lesson, no meaningful content.
 {
-  name: "Picture Description", 
+  name: "Picture Description Lesson",
   id: "lesson-tt-0020",       
   author: "Laura Fortmann",  
   version: 1,                 
@@ -11,15 +11,55 @@
   text_url: "http://uos.de",
   tasks: [  // the list of tasks for this lesson
     { 
-      name:  "What is a lession?",
+      name:  "Picture Description",
       type: "V",         
       interaction: "PICDES", 
       primary: true,     
       show_lesson_text: false,  
-      question:  "Describe the image below by mentioning all five colored items.", 
-      url: "OIP.jpg",
-      answer: "child, dentist, assistant, teeth, instrument"
-    }  
+      question:  "Describe the animal cell by mentioning all five colored items.",
+      url: "Animal_cell.jpg",
+      answer: "cell membrane, mitochondria, nucleos, nucleolus, lysosome"
+    },
+     {
+      name:  "Picture Description",
+      type: "V",
+      interaction: "PICDES",
+      primary: true,
+      show_lesson_text: false,
+      question:  "Describe the brain (lobes) by mentioning all five colored items.",
+      url: "Brain.jpg",
+      answer: "frontal lobe, temporal lobe, parietal lobe, occipital lobe, cerebellum"
+    },
+    {
+      name:  "Picture Description",
+      type: "V",
+      interaction: "PICDES",
+      primary: true,
+      show_lesson_text: false,
+      question:  "Describe the lungs by mentioning all five colored items.",
+      url: "Lungs.jpg",
+      answer: "trachea, right lung, left lung, diaphragm, bronchus"
+    },
+     {
+      name:  "Picture Description",
+      type: "V",
+      interaction: "PICDES",
+      primary: true,
+      show_lesson_text: false,
+      question:  "Describe the Neuron by mentioning all five colored items.",
+      url: "Neuron.jpg",
+      answer: "nucleus, cell body, node of ranvier, myelin sheath, axon terminal"
+    },
+     {
+      name:  "Picture Description",
+      type: "V",
+      interaction: "PICDES",
+      primary: true,
+      show_lesson_text: false,
+      question:  "Describe the plant cell by mentioning all five colored items.",
+      url: "Plant_cell.jpg",
+      answer: "nucleus, nucleolus, vacuole, mitochondria, cell wall"
+    },
 
   ],  // end of list of tasks
 } // end of lesson
