@@ -1,15 +1,21 @@
 {% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <p class="card-text">{{ task.question }}</p>
 
 {% if mode == 'solve' %}
     <form method="post">
         {% csrf_token %}
+        
+        
         <input type="hidden" name="task" value="{{ task.id }}">
         <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}"></img><p>
         <p><textarea rows="9" cols="70" name="answer" placeholder="Please enter your description here!"></textarea></p>
         <div style="margin-top: 2em">
-            <button type="submit" class="btn btn-secondary">Check!</button>
+            <button type="submit" class="btn btn-secondary" id="button_sub">Check!</button>
+            <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px; left:95%; position:absolute; visibility:hidden;" id="spinner"></i>
         </div>
+       
+        
     </form>
 {% else %}
     {% if solved %}
@@ -32,7 +38,7 @@
 
     
     <div class="list" >
-        <span><b>You did not mentioned:</b></span>
+        <span><b>You did not mention:</b></span>
         <ul>
             {% for noun_not in not_mentioned_nouns %}
     
@@ -85,3 +91,19 @@
   
 
 {% endif %}
+
+<script>
+
+    var solved = "{{mode}}";
+    if (solved=='solve'){
+        var button = document.getElementById('button_sub');
+        var spinner= document.getElementById('spinner');
+    
+        
+        button.addEventListener(
+            'click', function(){
+                spinner.style.visibility = "visible";
+                console.log(button);}); 
+    }
+
+</script>
