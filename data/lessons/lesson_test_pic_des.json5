@@ -26,9 +26,9 @@
       interaction: "PICDES",
       primary: true,
       show_lesson_text: false,
-      question:  "Describe the brain (lobes) by mentioning all five colored items.",
+      question:  "Describe the brain by mentioning all four lobes and the brain part behind the spinal cord (pink).",
       url: "Brain.jpg",
-      answer: "frontal lobe, temporal lobe, parietal lobe, occipital lobe, cerebellum"
+      answer: "frontal, temporal, parietal, occipital, cerebellum"
     },
     {
       name:  "Picture Description",
