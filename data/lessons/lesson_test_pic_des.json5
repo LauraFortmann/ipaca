@@ -18,7 +18,7 @@
       show_lesson_text: false,  
       question:  "Describe the animal cell by mentioning all five colored items.",
       url: "Animal_cell.jpg",
-      answer: "cell membrane, mitochondria, nucleos, nucleolus, lysosome"
+      answer: "membrane, mitochondria, nucleos, nucleolus, lysosome"
     },
      {
       name:  "Picture Description",
@@ -38,7 +38,7 @@
       show_lesson_text: false,
       question:  "Describe the lungs by mentioning all five colored items.",
       url: "Lungs.jpg",
-      answer: "trachea, right lung, left lung, diaphragm, bronchus"
+      answer: "trachea, lung, left, diaphragm, bronchus"
     },
      {
       name:  "Picture Description",
@@ -48,7 +48,7 @@
       show_lesson_text: false,
       question:  "Describe the Neuron by mentioning all five colored items.",
       url: "Neuron.jpg",
-      answer: "nucleus, cell body, node of ranvier, myelin sheath, axon terminal"
+      answer: "nucleus, body,ranvier, myelin, terminal"
     },
      {
       name:  "Picture Description",
@@ -58,7 +58,7 @@
       show_lesson_text: false,
       question:  "Describe the plant cell by mentioning all five colored items.",
       url: "Plant_cell.jpg",
-      answer: "nucleus, nucleolus, vacuole, mitochondria, cell wall"
+      answer: "nucleus, nucleolus, vacuole, mitochondria,wall"
     },
 
   ],  // end of list of tasks
