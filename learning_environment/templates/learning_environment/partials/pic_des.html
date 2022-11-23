@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <p class="card-text">{{ task.question }}</p>
 
 {% if mode == 'solve' %}
@@ -8,8 +9,8 @@
         
         
         <input type="hidden" name="task" value="{{ task.id }}">
-        <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}"></img><p>
-        <p><textarea rows="9" cols="70" name="answer" placeholder="Please enter your description here!"></textarea></p>
+        <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}" width="700"></img><p>
+        <p><textarea rows="9" cols="80" name="answer" placeholder="Please enter your description here!"></textarea></p>
         <div style="margin-top: 2em">
             <button type="submit" class="btn btn-secondary" id="button_sub">Check!</button>
             <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px; left:95%; position:absolute; visibility:hidden;" id="spinner"></i>
@@ -23,7 +24,7 @@
     {% else %}
         <p>You failed. You only mentioned <b>{{mentioned}}/5</b> nouns.</p>
     {% endif %}
-    <p><img src="{% static 'learning_environment/images/' %}{{task.content.1}}"></img><p>
+    <img src="{% static 'learning_environment/images/' %}{{task.content.1}}" class="images">
     <p><b>Your answer was:</b></p>
     <p style="padding: 10px; border: 2px solid black;"> {{answer}}</p>
     <p>
