@@ -60,6 +60,15 @@
       url: "Plant_cell.jpg",
       answer: "nucleus, nucleolus, vacuole, mitochondria,wall"
     },
-
+    {
+      name:  "Picture Description",
+      type: "V",
+      interaction: "PICDES",
+      primary: true,
+      show_lesson_text: false,
+      question:  "Describe the picture of the dentist.",
+      url: "Dentist.jpeg",
+      answer: "dentist, patient, assistent, instrument, gloves"
+    },
   ],  // end of list of tasks
 } // end of lesson
